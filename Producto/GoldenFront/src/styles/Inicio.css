@@ -1,0 +1,237 @@
+/* Estilos generales */
+.pagina-completa {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+}
+
+.contenido-principal {
+  flex: 1;
+  background-color: #000;
+}
+
+/* Estilos del carrusel */
+.carousel {
+  margin-bottom: 2rem;
+}
+
+.carousel-item {
+  max-height: 800px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 550px; /* Limita el ancho del cuadro */
+  margin: 0 auto; /* Centra el cuadro */
+}
+
+.carousel-caption h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos de la sección "Más Vendidos" */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #ffc107;
+}
+
+/* Estilos de las tarjetas de productos */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2) !important;
+}
+
+.card-img-container {
+  background-color: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.1); /* Hace zoom para que las hamburguesas se vean más uniformes */
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  height: 250px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff !important;
+  margin-bottom: 0.5rem;
+  min-height: 2em;
+}
+
+.card-text {
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 4.5em;
+  line-height: 1.5em;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.btn-add-cart {
+  background-color: #ffc107;
+  border: none;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background-color: #ffb300;
+  transform: scale(1.1);
+}
+
+.price {
+  color: #ffc107;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Estilos del botón Ver más */
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffb300;
+  border-color: #ffb300;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-caption h3 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .card {
+    height: 500px;
+  }
+  
+  .card-img-container {
+    height: 250px;
+  }
+  
+  .card-body {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    padding: 10px;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    height: 450px;
+  }
+  
+  .card-img-container {
+    height: 200px;
+  }
+  
+  .card-body {
+    height: 250px;
+  }
+}

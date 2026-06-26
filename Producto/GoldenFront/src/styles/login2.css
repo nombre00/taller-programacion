@@ -1,0 +1,705 @@
+/* login.css - Estilos específicos para el componente Login */
+
+
+
+.login-page-container {
+  display: flex;
+  background-color: #f6b343;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  padding: 20px;
+}
+
+.login-page-container * {
+  box-sizing: border-box;
+}
+
+.login-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+}
+
+/* Botón de cierre */
+.close-button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition:  0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Contenedor principal */
+.login-page-container .container {
+  background-color: #000000;
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+}
+
+/* Títulos y textos */
+.login-page-container h1 {
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin: 0;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.login-page-container h1.title {
+  font-size: 45px;
+  line-height: 45px;
+  margin: 0;
+  text-shadow: 0 0 10px #f6b343;
+}
+
+.login-page-container p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+  text-shadow: 0 0 10px rgba(16, 64, 74, 0.5);
+  color: white;
+}
+
+/* Formularios */
+.login-page-container form {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.login-page-container input {
+  background-color: #eee;
+  border-radius: 10px;
+  border: none;
+  padding: 12px 15px;
+  margin: 10px 0;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-page-container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f6b343;
+}
+
+/* Botones */
+.login-page-container button {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid #f6b343;
+  background-color: #f6b343;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 10px;
+  padding: 12px 80px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.login-page-container button:hover {
+  letter-spacing: 3px;
+}
+
+.login-page-container button:active {
+  transform: scale(0.95);
+}
+
+.login-page-container button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: #000000;
+  border: 2px solid #000000;
+  color: #ffffff;
+}
+
+button.ghost:hover {
+  background-color: #f6b343;
+  color: #000000;
+}
+
+/* Contenedores de formularios */
+.form-container-login {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  width: 50%;
+}
+
+.login-container {
+  left: 0;
+  z-index: 2;
+  background-color: #000000;
+}
+
+
+.container.right-panel-active .login-container {
+  transform: translateX(100%);
+}
+
+.register-container {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  background-color: #000000;
+}
+
+.container.right-panel-active .register-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* Panel overlay */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translate(-100%);
+}
+
+.overlay {
+  background-size: cover;
+  background-position: 0 0;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #f6b343, #f6b343);
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+/* Tablets grandes y pantallas medianas (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .login-page-container {
+    padding: 20px;
+  }
+  
+  .login-wrapper {
+    max-width: 700px;
+  }
+  
+  .login-page-container .container {
+    min-height: 520px;
+  }
+  
+  .login-page-container form {
+    padding: 0 45px;
+  }
+  
+  .login-page-container h1 {
+    font-size: 32px;
+  }
+  
+  .login-page-container h1.title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  
+  .login-page-container p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  .login-page-container button {
+    padding: 12px 70px;
+    font-size: 14px;
+  }
+  
+  .login-page-container input {
+    padding: 13px 18px;
+    font-size: 15px;
+  }
+  
+  .overlay-panel {
+    padding: 0 35px;
+  }
+}
+
+/* Tablets pequeñas (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .login-page-container {
+    padding: 15px;
+    min-height: 100vh;
+  }
+  
+  .login-wrapper {
+    max-width: 600px;
+  }
+  
+  .login-page-container .container {
+    min-height: 560px;
+  }
+
+  .login-page-container form {
+    padding: 0 35px;
+  }
+
+  .login-page-container h1 {
+    font-size: 26px;
+  }
+  
+  .login-page-container h1.title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  
+  .login-page-container p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .login-page-container button {
+    padding: 12px 55px;
+    font-size: 14px;
+  }
+  
+  .login-page-container input {
+    padding: 13px 16px;
+    font-size: 15px;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .overlay-panel {
+    padding: 0 30px;
+  }
+}
+
+/* Dispositivos móviles pequeños (360px - 480px) */
+@media (max-width: 480px) and (min-width: 361px) {
+  .login-page-container {
+    padding: 10px;
+  }
+ 
+  .login-page-container .container {
+    min-height: 550px;
+    border-radius: 15px;
+  }
+  
+  .login-page-container form {
+    padding: 0 20px;
+  }
+  
+  .login-page-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .login-page-container h1.title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .login-page-container p {
+    font-size: 13px;
+    margin: 15px 0 20px;
+    line-height: 18px;
+  }
+
+  .login-page-container button {
+    padding: 10px 30px;
+    min-width: 160px;
+    font-size: 13px;
+    margin: 8px;
+  }
+  
+  .login-page-container input {
+    padding: 10px 12px;
+    margin: 8px 0;
+    font-size: 13px;
+  }
+
+  .close-button {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .overlay-panel {
+    padding: 0 20px;
+  }
+  
+  .login-page-container .container {
+    flex-direction: column;
+  }
+  
+  .form-container-login {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+  }
+  
+  .overlay-container {
+    display: none;
+  }
+  
+  .login-container {
+    top: 0;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .register-container {
+    top: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .container.right-panel-active .login-container {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .container.right-panel-active .register-container {
+    transform: translateY(-100%);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+/* Pantallas muy pequeñas (hasta 360px) */
+@media (max-width: 360px) {
+  .login-page-container .container {
+    min-height: 500px;
+  }
+  
+
+  .login-page-container h1.title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .login-page-container button {
+    padding: 8px 25px;
+    min-width: 140px;
+    font-size: 12px;
+  }
+  
+  .login-page-container form {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 768px) {
+  .login-page-container {
+    padding: 15px;
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .login-wrapper {
+    max-width: 90%;
+    min-height: auto;
+  }
+  
+  .login-page-container .container {
+    min-height: 600px;
+    height: auto;
+  }
+
+  .login-page-container form {
+    padding: 0 40px;
+  }
+
+  .login-page-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .login-page-container h1.title {
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .login-page-container p {
+    font-size: 15px;
+    margin: 20px 0 30px;
+    line-height: 22px;
+  }
+  
+  .login-page-container button {
+    padding: 12px 60px;
+    min-width: 180px;
+    font-size: 14px;
+    margin: 12px;
+  }
+  
+  .login-page-container input {
+    padding: 15px 20px;
+    margin: 12px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px; /* Limitar el ancho máximo */
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid transparent; 
+    color: #333;
+    display: center;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .overlay-panel {
+    padding: 0 35px;
+  }
+
+  .overlay-panel h1.title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .overlay-panel p {
+    font-size: 15px;
+    line-height: 22px;
+    max-width: 280px;
+  }
+
+  .overlay-panel .ghost {
+    padding: 11px 40px;
+    font-size: 14px;
+  }
+
+  
+  .form-container-login {
+    width: 50%;
+  }
+
+  .overlay-container {
+    width: 50%;
+  }
+}
+
+/* Dispositivos móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .login-page-container {
+    padding: 10px;
+    justify-content: flex-start;
+    min-height: 100vh;
+    height: auto;
+  }
+ 
+  .login-page-container .container {
+    min-height: 550px;
+    border-radius: 15px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .login-page-container form {
+    padding: 40px 20px 20px;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .login-page-container h1 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+  
+  .login-page-container h1.title {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .login-page-container p {
+    font-size: 14px;
+    margin: 10px 0 25px;
+    line-height: 18px;
+    text-align: center;
+    color: white;
+    max-width: 280px;
+  }
+  
+  .login-page-container button {
+    padding: 14px 40px;
+    min-width: 200px;
+    font-size: 15px;
+    margin: 20px 0 10px;
+    width: auto;
+  }
+  
+  .login-page-container input {
+    padding: 15px 20px;
+    margin: 12px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    color: #333;
+    display: block;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  .form-container-login {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: #000000;
+    left: 0;
+  }
+
+  .login-container {
+    top: 0;
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .register-container {
+    top: 50%;
+    opacity: 0;
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  .container.right-panel-active .login-container {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .container.right-panel-active .register-container {
+    transform: translateY(-100%);
+    opacity: 1;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,21 @@
+/* Estilos específicos para la página Mi Perfil */
+
+/* Cards de perfil - misma altura para todos */
+.perfil-card {
+  height: 100% !important;
+  max-height: none !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-card .card-body {
+  flex: 1;
+  height: auto !important;
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+
+/* Input deshabilitado - texto más claro para mejor legibilidad */
+.form-control:disabled {
+  color: #adb5bd !important;
+}

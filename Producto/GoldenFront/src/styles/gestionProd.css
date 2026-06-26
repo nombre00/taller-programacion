@@ -1,0 +1,342 @@
+
+.gestion-admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #1a1a1a;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/*Contenedor Principal*/
+.prod-admin-content {
+   flex-grow: 1;
+  background-color: #1a1a1a;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 20px 100px 100px 100px; 
+}
+
+.prod-admin-content .container {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fdfdfd;
+}
+
+/* Títulos */
+.prod-admin-content .titulo-gp {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+/* Contenedor externo del formulario */
+
+/* Formulario */
+.prod-admin-content .form-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 10px auto 30px auto;
+  background-color: #2d2d2d;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-producto label {
+  font-weight: 600;
+  color: #ffcc00;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-producto input[type="text"],
+.form-producto input[type="number"],
+.form-producto select,
+.form-producto textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  color: #fdfdfd;
+  box-sizing: border-box;
+  background: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-producto input[type="text"]:focus,
+.form-producto input[type="number"]:focus,
+.form-producto select:focus,
+.form-producto textarea:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+  background: #3b3b3b;
+}
+
+.form-producto textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-producto select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcc00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 35px;
+}
+
+.form-producto input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  background: #333;
+  color: #fdfdfd;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-producto input[type="file"]:hover {
+  border-color: #ffcc00;
+}
+
+.form-producto input[type="file"]:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+  background: #3b3b3b;
+}
+
+.form-producto input[type="file"]::file-selector-button {
+  background-color: #ffcc00;
+  color: #0d0d0d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.form-producto input[type="file"]::file-selector-button:hover {
+  background-color: #e6b800;
+}
+
+.btn-agregar {
+  background-color: #ffcc00;
+  color: #0d0d0d;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-agregar:hover {
+  background-color: #e6b800;
+}
+
+/* Tabla de productos */
+.tabla-producto {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tabla-producto thead {
+  background-color: #ffcc00;
+}
+
+.tabla-producto thead th {
+  color: #0d0d0d;
+  font-weight: 600;
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 2px solid #e6b800;
+}
+
+.tabla-producto tbody tr {
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #444;
+}
+
+.tabla-producto tbody tr:hover {
+  background-color: #3d3d3d;
+}
+
+.tabla-producto tbody tr:nth-child(even) {
+  background-color: #333;
+}
+
+.tabla-producto tbody tr:nth-child(even):hover {
+  background-color: #444;
+}
+
+.tabla-producto td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #444;
+  color: #fdfdfd;
+}
+
+.tabla-producto img {
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #555;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+/* Mensaje cuando no hay productos */
+.no-products {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-style: italic;
+}
+
+
+@media (max-width: 992px) {
+  .prod-admin-content {
+    margin-left: 150px; 
+    width: calc(100% - 150px);
+    padding: 1.5rem;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .prod-admin-content {
+    width: 100%;
+   
+  }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  .form-container {
+    margin: 0 auto 30px auto;
+    padding: 20px 15px;
+  }
+  
+  /* Tabla responsive */
+  .tabla-producto {
+    display: block;
+    overflow-x: auto;
+    font-size: 14px;
+  }
+  
+  .tabla-producto thead th {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .tabla-producto td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .tabla-producto img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prod-admin-content {
+    padding: 10px;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  .form-container {
+    padding: 15px 10px;
+  }
+  
+  .form-producto input[type="text"],
+  .form-producto input[type="number"],
+  .form-producto input[type="file"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .btn-agregar {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilos específicos para móviles muy pequeños */
+@media (max-width: 360px) {
+  .prod-admin-content.admin-content {
+    padding: 5px;
+  }
+  
+  .tabla-producto {
+    font-size: 12px;
+  }
+  
+  .btn-eliminar {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

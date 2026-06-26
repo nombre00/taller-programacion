@@ -1,0 +1,11 @@
+
+/* En App.css */
+.pagina-completa {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenido-principal {
+  flex-grow: 1;
+}

@@ -1,0 +1,49 @@
+{
+  "properties": [
+    {
+      "name": "firebase.credentials.path",
+      "type": "java.lang.String",
+      "description": "Ruta al archivo de credenciales de Firebase Admin SDK."
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Clave secreta para firmar tokens JWT internos (mínimo 256 bits)."
+    },
+    {
+      "name": "jwt.expiration",
+      "type": "java.lang.Long",
+      "description": "Tiempo de expiración de tokens JWT en milisegundos."
+    },
+    {
+      "name": "microservices.gestion-usuario.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Usuarios."
+    },
+    {
+      "name": "microservices.gestion-venta.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Ventas."
+    },
+    {
+      "name": "microservices.gestion-pedido.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Pedidos."
+    },
+    {
+      "name": "microservices.gestion-catalogo.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Catálogo."
+    },
+    {
+      "name": "microservices.gestion-contacto.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Contacto."
+    },
+    {
+      "name": "cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "Orígenes permitidos para CORS (separados por coma)."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Clave secreta para validar tokens JWT (debe coincidir con API Gateway)."
+    },
+    {
+      "name": "firebase.credentials.path",
+      "type": "java.lang.String",
+      "description": "Ruta al archivo de credenciales de Firebase Admin SDK."
+    },
+    {
+      "name": "firebase.storage.bucket",
+      "type": "java.lang.String",
+      "description": "Nombre del bucket de Firebase Storage para almacenar imágenes."
+    }
+  ]
+}

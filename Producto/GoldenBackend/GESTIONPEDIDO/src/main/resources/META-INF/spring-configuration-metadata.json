@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Clave secreta para validar tokens JWT (debe coincidir con API Gateway)."
+    },
+    {
+      "name": "gestionventa.url",
+      "type": "java.lang.String",
+      "description": "URL del microservicio de Gestión de Ventas."
+    }
+  ]
+}

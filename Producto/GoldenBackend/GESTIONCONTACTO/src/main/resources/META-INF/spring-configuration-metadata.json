@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Clave secreta para validar tokens JWT (debe coincidir con API Gateway)."
+    }
+  ]
+}

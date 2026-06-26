@@ -1,0 +1,1 @@
+Microservicio: GESTION CATALOGO sss
